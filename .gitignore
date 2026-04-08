@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Backup files
+*.backup-*
+*.bak
+*~
+
+# Local design / reference notes (not for deployment)
+design_philosophy.md
+neon_wayfinding_philosophy.md
+photo_sources_reference.md
+streetview_links.md
+streetview_capture.html
+walking_guide_neon.png
+
+# Raw photo source folder (photos are embedded as base64 in index.html)
+photos/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / build artifacts (just in case)
+node_modules/
+dist/
+build/
