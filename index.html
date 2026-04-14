@@ -449,6 +449,81 @@ body{
   color:var(--dim2);margin-top:.75rem;min-height:1.2rem;letter-spacing:.5px;
 }
 
+/* Trouble report buttons + wait message */
+.trouble-section{display:none;margin-top:1.25rem;}
+.trouble-label{
+  text-align:center;font-size:var(--fs-small);color:var(--dim);
+  margin-bottom:.75rem;line-height:1.5;
+}
+.trouble-btn{
+  display:block;width:100%;margin:.5rem 0;padding:.85rem 1rem;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--navy4);border-radius:12px;
+  color:var(--white);font-size:var(--fs-small);font-weight:600;
+  cursor:pointer;transition:all .2s;text-align:left;
+  font-family:inherit;
+}
+.trouble-btn:hover,.trouble-btn:active{
+  border-color:var(--coral);background:rgba(255,94,94,0.08);
+}
+.trouble-btn .tb-icon{margin-right:.5rem;}
+.trouble-btn .tb-sub{
+  display:block;font-size:var(--fs-micro);color:var(--dim);
+  font-weight:400;margin-top:.2rem;
+}
+
+.wait-message{
+  display:none;margin-top:1.25rem;padding:1.1rem 1rem;
+  background:rgba(62,255,168,0.08);
+  border:1px solid var(--mint);border-radius:14px;
+  text-align:center;
+}
+.wait-message .wm-icon{font-size:1.8rem;margin-bottom:.4rem;}
+.wait-message .wm-line1{
+  font-size:var(--fs-body);color:var(--mint);font-weight:700;
+  margin-bottom:.35rem;
+}
+.wait-message .wm-line2{
+  font-size:var(--fs-small);color:var(--dim);margin-bottom:.15rem;
+}
+.wait-message .wm-line3{
+  font-size:var(--fs-small);color:var(--dim2);opacity:.85;
+  margin-bottom:.75rem;
+}
+.wait-message .wm-call{
+  display:block;margin-top:.6rem;padding:.7rem;
+  background:var(--coral);color:#fff;border-radius:10px;
+  font-weight:700;font-size:var(--fs-body);text-decoration:none;
+  letter-spacing:.5px;
+}
+.wait-message .wm-call-sub{
+  font-size:var(--fs-micro);color:var(--dim);
+  margin-top:.4rem;line-height:1.5;
+}
+
+/* Door notice (shown after GPS confirmed) */
+.door-notice{
+  display:none;margin:1rem 0 .25rem;padding:1rem 1rem;
+  background:rgba(62,255,168,0.08);
+  border:1px solid var(--mint);border-radius:14px;
+  text-align:center;
+  box-shadow:0 0 24px rgba(62,255,168,0.15);
+}
+.door-notice .door-line1{
+  font-size:var(--fs-body);color:var(--mint);font-weight:700;
+  letter-spacing:.5px;margin-bottom:.35rem;
+}
+.door-notice .door-code{
+  font-family:var(--font-mono);font-size:1.9rem;font-weight:700;
+  color:var(--white);letter-spacing:3px;margin:.35rem 0;
+}
+.door-notice .door-line2{
+  font-size:var(--fs-small);color:var(--dim);
+}
+.door-notice .door-line3{
+  font-size:var(--fs-small);color:var(--dim2);opacity:.8;
+}
+
 /* Upload area */
 .up-section{display:none;margin-top:1.5rem;}
 .up-label{font-size:var(--fs-small);color:var(--white);font-weight:600;margin-bottom:.25rem;text-align:center;}
@@ -749,17 +824,15 @@ body{
       </div>
 
       <div style="margin-top:6px;padding:12px;background:rgba(255,94,94,.1);border:1px dashed rgba(255,94,94,.4);border-radius:10px;font-size:13px;line-height:1.6;color:#fff;margin-bottom:10px">
-        📍 <b>由九龍 / 新界 / 堅尼地城方向出發 → Quinary</b>
-        <div style="color:#c8d4e8;font-size:11.5px;margin-top:3px">From Kowloon, NT (cross-harbour) or HK Island West: Quinary Bar, 56-58 Hollywood Road · 从九龙、新界（过海）或港岛西：Quinary 酒吧，荷李活道 56-58 号</div>
-        <div style="margin-top:8px;font-size:12px;color:#e6edf7">落車喺「荷李活道 Quinary 酒吧」之後，揀 <a href="javascript:void(0)" onclick="startRoute('C')" style="color:#A78BFA;text-decoration:underline;font-weight:700">路線 C</a>。</div>
-        <div style="color:#c8d4e8;font-size:11px;margin-top:4px">Get off at Quinary Bar on Hollywood Road, then follow <a href="javascript:void(0)" onclick="startRoute('C')" style="color:#A78BFA;text-decoration:underline;font-weight:700">Route C</a>.</div>
+        <div style="font-size:13px;color:#fff">由九龍 / 新界 / 港島西：揀 🍸 <b>Quinary 酒吧</b> 做落車地點，然後跟 <a href="javascript:void(0)" onclick="startRoute('C')" style="color:#A78BFA;text-decoration:underline;font-weight:700">路線 C</a>。</div>
+        <div style="color:#c8d4e8;font-size:11.5px;margin-top:4px">From Kowloon / NT / HK Island West: choose 🍸 <b>Quinary Bar</b> as drop-off, then follow <a href="javascript:void(0)" onclick="startRoute('C')" style="color:#A78BFA;text-decoration:underline;font-weight:700">Route C</a>.</div>
+        <div style="color:#c8d4e8;font-size:11.5px;margin-top:2px">从九龙 / 新界 / 港岛西：选 🍸 <b>Quinary 酒吧</b> 为下车点，然后跟 <a href="javascript:void(0)" onclick="startRoute('C')" style="color:#A78BFA;text-decoration:underline;font-weight:700">路线 C</a>。</div>
       </div>
 
       <div style="padding:12px;background:rgba(255,94,94,.1);border:1px dashed rgba(255,94,94,.4);border-radius:10px;font-size:13px;line-height:1.6;color:#fff">
-        📍 <b>由柴灣方向出發（港島東）→ Green Waffle Diner</b>
-        <div style="color:#c8d4e8;font-size:11.5px;margin-top:3px">From Chai Wan side (HK Island East): Green Waffle Diner on Gage Street · 从柴湾方向（港岛东）：结志街 Green Waffle Diner</div>
-        <div style="margin-top:8px;font-size:12px;color:#e6edf7">落車喺「結志街 Green Waffle」之後，揀 <a href="javascript:void(0)" onclick="startRoute('B')" style="color:#3EFFA8;text-decoration:underline;font-weight:700">路線 B</a>。</div>
-        <div style="color:#c8d4e8;font-size:11px;margin-top:4px">Get off at Green Waffle on Gage Street, then follow <a href="javascript:void(0)" onclick="startRoute('B')" style="color:#3EFFA8;text-decoration:underline;font-weight:700">Route B</a>.</div>
+        <div style="font-size:13px;color:#fff">由柴灣 / 港島東：揀 🧇 <b>Green Waffle Diner</b> 做落車地點，然後跟 <a href="javascript:void(0)" onclick="startRoute('B')" style="color:#3EFFA8;text-decoration:underline;font-weight:700">路線 B</a>。</div>
+        <div style="color:#c8d4e8;font-size:11.5px;margin-top:4px">From Chai Wan / HK Island East: choose 🧇 <b>Green Waffle Diner</b> as drop-off, then follow <a href="javascript:void(0)" onclick="startRoute('B')" style="color:#3EFFA8;text-decoration:underline;font-weight:700">Route B</a>.</div>
+        <div style="color:#c8d4e8;font-size:11.5px;margin-top:2px">从柴湾 / 港岛东：选 🧇 <b>Green Waffle Diner</b> 为下车点，然后跟 <a href="javascript:void(0)" onclick="startRoute('B')" style="color:#3EFFA8;text-decoration:underline;font-weight:700">路线 B</a>。</div>
       </div>
     </div>
   </div>
@@ -833,26 +906,31 @@ body{
   <div class="gps-status-zh" id="gpsStatusZh">🛰 检测位置中…</div>
   <div class="gps-dist" id="gpsDist"></div>
 
-  <!-- Upload (shown if GPS ok) -->
-  <div class="up-section" id="upSection">
-    <div class="up-label">📷 上傳相片</div>
-    <div class="up-label-en">Upload photo</div>
-    <div class="up-label-zh">上传照片</div>
-    <img class="upload-preview" id="upPrev" alt="">
-    <div class="upload-area">
-      <input type="file" id="upFile" accept="image/*" capture="user" onchange="onFile(this)">
-      <div class="upload-icon">📷</div>
-      <div class="upload-hint">點擊拍照 / 選相<br>Tap to take photo / select image<br>点击拍照 / 选图</div>
-    </div>
-    <div class="upload-status" id="upStatus"></div>
-    <button class="btn-send" id="btnSend" onclick="sendTG()">📨 傳送通知 · Send notification · 发送通知</button>
+  <!-- Door instruction (shown after GPS confirmed) -->
+  <div class="door-notice" id="doorNotice">
+    <div class="door-line1">🔔 請按門鐘 · Press doorbell</div>
+    <div class="door-code">2B</div>
+    <div class="door-line2">Press <b>2B</b> to open the door</div>
+    <div class="door-line3">按 2B 開門 · 按 2B 开门</div>
   </div>
 
-  <!-- Fallback (shown if GPS fails) -->
+  <!-- Trouble report button (visible during GPS check, hidden after success or fail) -->
+  <div class="trouble-section" id="troubleSection" style="display:block">
+    <button class="trouble-btn" onclick="showUpload('not_detected')">
+      <span class="tb-icon">📡</span>GPS 偵測唔到？
+      <span class="tb-sub">GPS not detected? · GPS 检测不到？</span>
+    </button>
+  </div>
+
+  <!-- Fail banner (auto-shown when GPS fails) -->
+  <div id="failBanner" style="display:none;margin-top:1rem;padding:.85rem;background:rgba(255,94,94,.1);border:1px solid var(--coral);border-radius:12px;text-align:center">
+    <div style="color:var(--coral);font-weight:700;font-size:var(--fs-body);margin-bottom:.25rem">❌ GPS 驗證失敗</div>
+    <div style="color:var(--dim);font-size:var(--fs-small)">GPS verification failed · GPS 验证失败</div>
+    <div style="color:var(--dim2);font-size:var(--fs-micro);margin-top:.4rem">請改用相片上載人手驗證 · Please upload a photo for manual verification</div>
+  </div>
+
+  <!-- Upload section (revealed only after user clicks a trouble button) -->
   <div class="fb-section" id="fbSection">
-    <div class="fb-box">
-      <div class="fb-label">⚠ GPS 失敗 · GPS FAILED · GPS 失败</div>
-    </div>
     <div class="fb-note">
       請上載大廈正門相片人手驗證<br>
       Please upload a photo of the building entrance for manual verification<br>
@@ -866,6 +944,20 @@ body{
     <img class="upload-preview" id="fbPrev" alt="" style="display:none">
     <div class="upload-status" id="fbStatus"></div>
     <button class="btn-send" id="fbBtnSend" style="display:none" onclick="fbContinue()">📨 傳送通知 · Send notification · 发送通知</button>
+  </div>
+
+  <!-- Wait message (shown after photo successfully sent) -->
+  <div class="wait-message" id="waitMessage">
+    <div class="wm-icon">⏳</div>
+    <div class="wm-line1">請耐心等候 3 分鐘</div>
+    <div class="wm-line2">Please be patient and wait for 3 minutes</div>
+    <div class="wm-line3">请耐心等候 3 分钟</div>
+    <a href="tel:67097964" class="wm-call">📞 6709 7964</a>
+    <div class="wm-call-sub">
+      3 分鐘後仍未有回覆請致電<br>
+      Call this number if no reply after 3 minutes<br>
+      3 分钟后仍未回复请致电
+    </div>
   </div>
 </div>
 
@@ -1190,13 +1282,14 @@ function startGPS(){
   document.getElementById('gpsStatusEn').textContent='🛰 Checking location…';
   document.getElementById('gpsStatusZh').textContent='🛰 检测位置中…';
   document.getElementById('gpsDist').textContent='';
-  document.getElementById('upSection').style.display='none';
+  document.getElementById('doorNotice').style.display='none';
+  document.getElementById('troubleSection').style.display='block';
+  document.getElementById('failBanner').style.display='none';
   document.getElementById('fbSection').style.display='none';
+  const wm=document.getElementById('waitMessage');
+  if(wm) wm.style.display='none';
   verifyFile=null;
   fbFileObj=null;
-  document.getElementById('upPrev').style.display='none';
-  document.getElementById('btnSend').style.display='none';
-  document.getElementById('upStatus').textContent='';
   const fbPrev=document.getElementById('fbPrev');
   if(fbPrev){fbPrev.style.display='none'; fbPrev.src='';}
   const fbBtn=document.getElementById('fbBtnSend');
@@ -1229,7 +1322,8 @@ function gpsOk(){
   document.getElementById('gpsStatus').textContent='✅ 位置確認！';
   document.getElementById('gpsStatusEn').textContent='✅ Location confirmed!';
   document.getElementById('gpsStatusZh').textContent='✅ 位置确认！';
-  document.getElementById('upSection').style.display='block';
+  document.getElementById('doorNotice').style.display='block';
+  document.getElementById('troubleSection').style.display='none';
 }
 
 function gpsFail(d){
@@ -1241,6 +1335,16 @@ function gpsFail(d){
   document.getElementById('gpsStatusEn').textContent='❌ Too far from destination';
   document.getElementById('gpsStatusZh').textContent='❌ 位置偏差太远';
   if(d) document.getElementById('gpsDist').textContent=Math.round(d)+' m away · 米外';
+  document.getElementById('troubleSection').style.display='none';
+  document.getElementById('failBanner').style.display='block';
+  document.getElementById('fbSection').style.display='block';
+  troubleReason='gps_fail';
+}
+
+let troubleReason='';
+function showUpload(reason){
+  troubleReason=reason;
+  document.getElementById('troubleSection').style.display='none';
   document.getElementById('fbSection').style.display='block';
 }
 
@@ -1308,9 +1412,13 @@ async function fbContinue(){
   st.textContent='傳送中… · Sending… · 发送中…'; st.className='upload-status';
 
   const distText=document.getElementById('gpsDist').textContent||'unknown';
+  const reasonText = troubleReason==='not_detected' ? 'GPS not detected'
+                    : troubleReason==='wrong' ? 'GPS location wrong'
+                    : 'manual';
   const caption=[
-    '⚠️ 嘉豪大廈訪客通知 · GPS 驗證失敗，人手驗證',
-    '⚠️ Visitor · GPS FAILED, manual verification',
+    '⚠️ 嘉豪大廈訪客通知 · 人手驗證',
+    '⚠️ Visitor · manual verification',
+    'Reason: '+reasonText,
     'Route: '+(curRoute||'N/A'),
     'GPS: '+distText,
     '時間 / Time: '+new Date().toLocaleString('zh-HK')
@@ -1326,7 +1434,11 @@ async function fbContinue(){
     const d=await r.json();
     if(d.ok){
       st.textContent='✅ 相片已傳送 · Photo sent · 照片已发送'; st.className='upload-status ok';
-      setTimeout(()=>goWait(),900);
+      // Hide upload area, show wait message
+      setTimeout(()=>{
+        document.getElementById('fbSection').style.display='none';
+        document.getElementById('waitMessage').style.display='block';
+      },900);
     }else throw new Error(d.description);
   }catch(e){
     st.textContent='❌ 傳送失敗 · Failed · 发送失败';
